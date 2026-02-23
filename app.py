@@ -7,6 +7,7 @@ parser = argparse.ArgumentParser("TestFileServer", description="A server that se
 parser.add_argument("filename")
 parser.add_argument("--host", default="localhost")
 parser.add_argument("--port", default="5000")
+parser.add_argument("--code", default=200)
 
 args = parser.parse_args()
 
@@ -17,6 +18,7 @@ app = Flask(__name__)
 def catch_all(path):
   resp = send_file(args.filename)
   resp.access_control_allow_origin = "*"
+  resp.status_code=args.code
   return resp
 if __name__ == '__main__':
   app.run(args.host, args.port)
