@@ -11,6 +11,8 @@ You will need python >3.9 to run this.
 
 ## How to run
 
-Run with `python app.py [your file that you want to serve]`
+While your virtual environment is active, run with `python app.py [your file that you want to serve]`
 
 The host and port can be configured with `--host` and `--port` but default to localhost and 5000.
+
+The response status code can be configured with `--code` but will default to 200. See [http.cat](https://http.cat) for more information on status codes.
